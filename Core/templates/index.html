@@ -1,0 +1,117 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Extraction Benchmark</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'fixed-table.css' %}">
+    <script src="{% static 'fixed-table.js' %}"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2> Content Extraction Benchmark </h2>
+<h4> Main Page </h4>
+
+<br><br>
+
+<h4> Compare Performance </h4>
+<div>
+    <table>
+        <tr>
+            <td>
+                Choose the <b>DATASET</b> to use for the experiment
+            </td>
+            <td>
+                <select style="width: 150px">
+                    <option  selected disabled>Choose here</option>
+                    <option value="1">Default Data</option>
+                    <option value="2">Customized Data</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Choose the <b>TOOL</b> you want to benchmark
+            </td>
+            <td>
+                <select style="width: 150px">
+                    <option  selected disabled>Choose here</option>
+                    <option value="1">Firefox Reader Mode</option>
+                    <option value="2">Safari Reader Mode</option>
+                    <option value="3">CPE</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/performance">Compare Start</a>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+
+<h4>Default Experiment Data Set</h4>
+<div id="fixed-table-container-1" class="fixed-table-container" style="width: 50%">
+    <table>
+        <thead align="left">
+        <tr><th>Page Number</th><th>Site Name</th><th>Site Description</th><th>Page Url</th></tr>
+        </thead>
+        <tbody>
+        {% for page in pages %}
+            <tr>
+                <td>{{ page.page_number }}</td>
+                <td>{{ page.site_name }}</td>
+                <td> {{ page.site_description }}</td>
+                <td> <a href="{{ page.page_url}}">{{ page.page_url}}</a> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<h4>Customized Experiment Data Set</h4>
+<div id="fixed-table-container-2" class="fixed-table-container" style="width: 50%" >
+    <table>
+        <thead align="left">
+        <tr><th>Page Number</th><th>Site Name</th><th>Site Description</th><th>Page Url</th></tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+<script>
+    var fixedTable1 = fixTable(document.getElementById('fixed-table-container-1'));
+    var fixedTable2 = fixTable(document.getElementById('fixed-table-container-2'));
+
+</script>
+
+</html>
+
+
+
+
+
+
+
