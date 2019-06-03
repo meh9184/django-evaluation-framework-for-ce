@@ -32,20 +32,3 @@ $ python manage.py runserver
   * /main
   * /performance
   * /performance_detail
-
-## Visualization
-
-+ Main Page
-<kbd>
-  <div width='80%'>
-    <img src='./screenshots/screenshot1.jpg'>
-  </div>
-</kbd>
-<br><br>
-
-+ Performance Compare Page
-<kbd>
-  <div width='80%'>
-    <img src='./screenshots/screenshot2.jpg'>
-  </div>
-</kbd>
