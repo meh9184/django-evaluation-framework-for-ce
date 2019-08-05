@@ -14,6 +14,7 @@ Another metric can be added arbitrarily.
 ```
 $ git clone django-evaluation-framework-for-ce
 $ cd django-evaluation-framework-for-ce
+$ python manage.py migrate
 $ python manage.py runserver
 ```
 
